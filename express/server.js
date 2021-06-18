@@ -39,7 +39,7 @@ app.post('/', (req, res) => {
     });
 
     // commit and push to git
-    exec("git add . ; git commit -a -m 'Automatic commit' ; git push", (error, stdout, stderr) => {
+    exec("git add ../. ; git commit -a -m 'Automatic commit' ; git push", (error, stdout, stderr) => {
         if (error) {
             console.log(`error: ${error.message}`);
             return;
