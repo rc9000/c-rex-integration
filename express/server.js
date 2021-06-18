@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const { exec, spawn }  = require('child_process');
 const fs = require('fs');
 const app = express();
 
@@ -35,6 +36,19 @@ app.post('/', (req, res) => {
     // write the file
     fs.writeFile(`${prefix}/${filename}`, rule, function (err) {
         if (err) return console.log("failed to write file:", err);
+    });
+
+    // commit and push to git
+    exec("git add . ; git commit -a -m 'Automatic commit' ; git push", (error, stdout, stderr) => {
+        if (error) {
+            console.log(`error: ${error.message}`);
+            return;
+        }
+        if (stderr) {
+            console.log(`stderr: ${stderr}`);
+            return;
+        }
+        console.log(`stdout: ${stdout}`);
     });
 
 

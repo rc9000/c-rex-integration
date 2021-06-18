@@ -1,6 +1,6 @@
-# C-Rex Example Integration
+# [C-Rex](https://c-rex.netnea.com) Example Integration
 
-This is a tiny C-Rex Example Integration that does these things:
+This is a tiny [C-Rex](https://c-rex.netnea.com) Example Integration that does these things:
 
  * receive a generated ModSecurity exclusion rule from the C-Rex web hook
  * pick the correct folder and generate a file name
