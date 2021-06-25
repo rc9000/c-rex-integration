@@ -39,6 +39,7 @@ app.post('/', (req, res) => {
     });
 
     // commit and push to git
+    var execOpt = {maxBuffer: 1024 * 1024 * 64};
     exec("git add ../. ; git commit -a -m 'rules updated via C-Rex API Integration' ; git push", (error, stdout, stderr) => {
         if (error) {
             console.log(`error: ${error.message}`);
