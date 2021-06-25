@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const { exec, spawn }  = require('child_process');
+const { exec, spawn, execSync }  = require('child_process');
 const fs = require('fs');
 const app = express();
 
